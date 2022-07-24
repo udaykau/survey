@@ -29,7 +29,7 @@ SECRET_KEY = 'f6ye!^bs01_tg@@r&54zdyjj4u+2r-hf1-vwe#_-wa8#$&rqyz'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'csp.apkperks.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'csp.apkperks.com', 'csp-apkperks.herokuapp.com/']
 
 
 # Application definition
