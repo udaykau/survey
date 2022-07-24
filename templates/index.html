@@ -1,0 +1,93 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Registration Form</title>
+	  <link rel="stylesheet" href="{% static 'style.css' %}" />
+  </head>
+  <body>
+  			<!-- Messages ---------->
+{% for message in messages %}
+            <div class="alert">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+  <b>Success! </b>{{ message }}
+</div>
+{% endfor %}
+
+    <h1>Bank CSP Center Application Form</h1>
+    <form action="{% url 'index' %}" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <fieldset>
+        <label><h3>Applying For *</h3>
+        <label><input type="checkbox" name="applying" class="inline" value="Bank CSP" /> Bank CSP</label>
+        <label><input type="checkbox" name="applying" class="inline" value="Credit Card DSA" /> Credit Card DSA</label>
+        </label>
+      </fieldset>
+      <fieldset>
+        <label><h3>1. Applicant *</h3>
+        <label><input type="radio" name="applicant" class="inline" value="Mr." /> Mr.</label>
+        <label><input type="radio" name="applicant" class="inline" value="Mrs." /> Mrs.</label>
+        <label><input type="radio" name="applicant" class="inline" value="Miss" /> Miss</label>
+        </label>
+      </fieldset>
+      <fieldset>
+        <label><h3>2. Name *</h3><input type="text" name="Name" required /></label>
+      </fieldset>
+      <fieldset>
+        <label><h3>3. Care Of *</h3>
+        <label><input type="radio" name="careOf" class="inline" value="Father" /> Father</label>
+        <label><input type="radio" name="careOf" class="inline" value="Husband" /> Husband</label>
+        <label>
+          <input type="text" name="other" class="inline" placeholder="Other" />
+			  </label>
+          </label>
+      </fieldset>
+      <fieldset>
+        <label><h3>4. Father's/Husband's Name *</h3><input type="text" name="FatherOrHusbandName" required /></label>
+      </fieldset>
+      <fieldset>
+        <label><h3>5. Gender *</h3>
+        <label><input type="radio" name="gender" class="inline" value="Male" /> Male</label>
+        <label><input type="radio" name="gender" class="inline" value="Female" /> Female</label>
+        </label>
+      </fieldset>
+      <fieldset>
+        <label><h3>6. Date of Birth *</h3><input type="date" name="dob" required /></label>
+      </fieldset>
+      <fieldset>
+        <label><h3>7. Communication Address *</h3><input type="text" name="communicationAddress" required /></label>
+      </fieldset>
+      <fieldset>
+        <label><h3>8. Mobile Number *</h3><input type="text" name="phone" required /></label>
+      </fieldset>
+      <fieldset>
+        <label><h3>9. Whatsapp Number *</h3><input type="text" name="whatsappNumber" required /></label>
+      </fieldset>
+      <fieldset>
+        <label><h3>10. Email ID *</h3><input type="email" name="email" required /></label>
+      </fieldset>
+      <fieldset>
+        <label><h3>11. Self Photo *</h3> <input type="file" name="selfPhoto" required/></label>
+      </fieldset>
+      <fieldset>
+        <label><h3>12. Adhar Number *</h3><input type="text" name="adharNumber" required /></label>
+      </fieldset>
+      <fieldset>
+        <label><h3>13. Upload Adhar Card Front *</h3> <input type="file" name="adhar1" required/></label>
+      </fieldset>
+      <fieldset>
+        <label><h3>14. Upload Adhar Card Back *</h3> <input type="file" name="adhar2" required/></label>
+      </fieldset>
+      <fieldset>
+        <label><h3>15. Pan Number *</h3><input type="text" name="panNumber" required /></label>
+      </fieldset>
+      <fieldset>
+        <label><h3>16. Upload Pan Card *</h3> <input type="file" name="panCard" required/></label>
+      </fieldset>
+      <fieldset>
+        <label><h3>17. Bank CSP Center Location *</h3><input type="text" name="bankLocation" required /></label>
+      </fieldset>
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
